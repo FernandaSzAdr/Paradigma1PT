@@ -16,4 +16,9 @@ public class Carta {
 	public char getValor() {
 		return valor;
 	}
+
+	@Override
+	public String toString() {
+		return "Carta " + valor + naipe + "";
+	}
 }

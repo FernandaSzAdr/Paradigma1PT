@@ -44,7 +44,7 @@ public class Formatador {
 					default:
 						valor = jo;
 					}
-				}else if (Character.isDigit(jo)) {
+				}if (Character.isDigit(jo)) {
 					valor = jo;
 				}
 				
@@ -68,7 +68,7 @@ public class Formatador {
 					default:
 						valor = jo;
 					}
-				}else if (Character.isDigit(jo)) {
+				}if (Character.isDigit(jo)) {
 					valor = jo;
 				}
 				

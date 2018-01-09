@@ -24,6 +24,7 @@ public class ControladorPrincipal {
 
 	public void setLinhaLida(String linhaLida) {
 		this.linhaLida = linhaLida;
+		
 	}	
 	
 	public void Formatador(){
@@ -32,6 +33,17 @@ public class ControladorPrincipal {
 		minhasCartasJogadorDois = meuFormatador.getMinhasCartasDois();
 		vencedor = meuFormatador.getVencedor();
 	}
-	
+
+	public String getVencedor() {
+		return vencedor;
+	}
+
+	public ArrayList<Carta> getMinhasCartasJogadorUm() {
+		return minhasCartasJogadorUm;
+	}
+
+	public ArrayList<Carta> getMinhasCartasJogadorDois() {
+		return minhasCartasJogadorDois;
+	}
 	
 }
