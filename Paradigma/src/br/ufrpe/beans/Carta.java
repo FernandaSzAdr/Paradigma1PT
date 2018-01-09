@@ -1,19 +1,19 @@
 package br.ufrpe.beans;
 
 public class Carta {
-	private String naipe;
-	private String valor;
+	private char naipe;
+	private char valor;
 	
-	public Carta(String naipe, String valor) {
+	public Carta(char naipe, char valor) {
 		this.naipe = naipe;
 		this.valor = valor;
 	}
 
-	public String getNaipe() {
+	public char getNaipe() {
 		return naipe;
 	}
 
-	public String getValor() {
+	public char getValor() {
 		return valor;
 	}
 }
