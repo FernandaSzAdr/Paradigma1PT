@@ -6,11 +6,11 @@ import java.io.IOException;
 
 public class Principal {
 	public static void main (String[] args){
-		//Instancia o controller que terá todas as subfunções:
+		//Instancia o controller que terï¿½ todas as subfunï¿½ï¿½es:
 		ControladorPrincipal controller = new ControladorPrincipal();
 		String nome_arq = "pokerK.txt";
 	 
-	    System.out.printf("\nConteúdo do arquivo texto:\n");
+	    System.out.printf("\nConteï¿½do do arquivo texto:\n");
 	    try {
 	    	  //Iniciando leitura do arquivo.
 		      FileReader arq = new FileReader(nome_arq);
@@ -21,7 +21,7 @@ public class Principal {
 		      do {
 		    	// Pega a linha do arquivo
 				linha = lerArq.readLine();
-				System.out.printf("%s\n", linha);
+				//System.out.printf("%s\n", linha);
 				// Passa a linha para o controller
 				controller.setLinhaLida(linha);
 				controller.Formatador();

@@ -13,12 +13,15 @@ public class Formatador {
 	private ArrayList<Carta> minhasCartasDois = new ArrayList<>();
 	
 	public Formatador() {}
-	
+	public Formatador(String jogo) {
+		setJogo(jogo);
+	}
 	// Recebe a linha do arquivo
 	public void setJogo(String jogo){
 		this.jogo = jogo;
-		// chama a função que vai repartir essa linha
+		// chama a funï¿½ï¿½o que vai repartir essa linha
 		pegarCarta();
+		
 	}
 	
 	private void pegarCarta(){
@@ -29,51 +32,54 @@ public class Formatador {
 		// Pega o jogador vencedor
 		jogadorVencedor = jogo.substring(30, 32);
 		
-		for(char jo : cartasJogadorUm.toCharArray()){
+		//char[] cartas = new char[15];
+	//	cartas = cartasJogadorUm.toCharArray();
+		//char jo = cartas[0];
+		int state = 0;
+		char valor = ' ';
+		for(char jo: cartasJogadorUm.toCharArray()){
+			char naipe = ' ';
 			if(!Character.isWhitespace(jo)){
-				char naipe = ' ';
-				char valor = ' ';
-				if(Character.isLetter(jo)){
-					switch(jo){
-					case 'C':
-					case 'O':
-					case 'P':
-					case 'E':
-						naipe = jo;
-						break;
-					default:
-						valor = jo;
-					}
-				}if (Character.isDigit(jo)) {
-					valor = jo;
+				
+				 if(state == 1) {
+					
+					naipe = jo;
+					state = 0;
+					
+					Carta aux = new Carta(naipe, valor);
+					minhasCartasUm.add(aux);
 				}
 				
-				Carta aux = new Carta(naipe, valor);
-				minhasCartasUm.add(aux);
+				else if(state == 0) {
+					
+					valor = jo;
+					state = 1;
+				}
+				
 			}
 		}
 		
-		for(char jo : cartasJogadorDois.toCharArray()){
+		state = 0;
+		 valor = ' ';
+		for(char jo: cartasJogadorDois.toCharArray()){
+			char naipe = ' ';
 			if(!Character.isWhitespace(jo)){
-				char naipe = ' ';
-				char valor = ' ';
-				if(Character.isLetter(jo)){
-					switch(jo){
-					case 'C':
-					case 'O':
-					case 'P':
-					case 'E':
-						naipe = jo;
-						break;
-					default:
-						valor = jo;
-					}
-				}if (Character.isDigit(jo)) {
-					valor = jo;
+				
+				 if(state == 1) {
+					
+					naipe = jo;
+					state = 0;
+	
+					Carta aux = new Carta(naipe, valor);
+					minhasCartasDois.add(aux);
 				}
 				
-				Carta aux = new Carta(naipe, valor);
-				minhasCartasDois.add(aux);
+				else if(state == 0) {
+					
+					valor = jo;
+					state = 1;
+				}
+				
 			}
 		}
 	}
