@@ -1,10 +1,11 @@
 package br.ufrpe.auxiliar;
 
 import java.util.ArrayList;
+import java.util.Collection;
 
-import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter.DEFAULT;
-
+//import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter.DEFAULT;
 import br.ufrpe.beans.Carta;
+import java.util.Collections;
 
 public class Formatador {
 	private String jogo;
@@ -13,8 +14,12 @@ public class Formatador {
 	private ArrayList<Carta> minhasCartasDois = new ArrayList<>();
 	
 	public Formatador() {}
+	
+	//Inicializa
 	public Formatador(String jogo) {
 		setJogo(jogo);
+		orderMao(this.minhasCartasUm);
+		orderMao(this.minhasCartasDois);
 	}
 	// Recebe a linha do arquivo
 	public void setJogo(String jogo){
@@ -22,6 +27,10 @@ public class Formatador {
 		// chama a fun��o que vai repartir essa linha
 		pegarCarta();
 		
+	}
+	//Ordena a Mão de cartas pelo valor das cartas
+	public void orderMao(ArrayList<Carta> mao) {
+		Collections.sort(mao);
 	}
 	
 	private void pegarCarta(){

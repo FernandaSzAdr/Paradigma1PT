@@ -1,6 +1,6 @@
 package br.ufrpe.beans;
 
-public class Carta {
+public class Carta implements Comparable<Carta>{
 	private char naipe;
 	private int valor;
 	
@@ -43,9 +43,22 @@ public class Carta {
 		return value;
 	}
 	
+	@Override
+    public int compareTo(Carta compare) {
+        int compareValor=((Carta)compare).getValor();
+        /* For Ascending order*/
+        return this.valor - compareValor;
+
+        /* For Descending order do like this */
+        //return compareage-this.studentage;
+    }
 	
 	@Override
 	public String toString() {
 		return "Carta " + valor + naipe + "";
 	}
+	
+
+	
+
 }
