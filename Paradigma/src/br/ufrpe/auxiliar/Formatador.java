@@ -22,6 +22,7 @@ public class Formatador {
 		// chama a fun��o que vai repartir essa linha
 		pegarCarta();
 		
+		
 	}
 	
 	private void pegarCarta(){
